@@ -75,6 +75,7 @@
 .r1 {
   margin-top: 60px;
 }
+
 .valign-wrapper {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -90,6 +91,58 @@
   justify-content: center;
   align-items: center;
 }
+.collapsible li.disabled .collapsible-body {
+  display: none !important; /*or using id of the app to avoid the use of !important*/
+}
+
+.collapsible li.disabled .collapsible-header {
+  background: rgb(221,221,221);
+}
+.sect {
+  background-color: #ececf6;
+  display: flex;
+}
+.sect1{
+  background-color:#ecd6d5;
+  display: flex;
+}
+.pad1{
+  font-size: 2.7rem;
+  padding-bottom:33px ;
+}
+.te__icons {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  width: 100px;
+  margin-left: +15px;
+}
+
+.footer__icon {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.footer__icon .img {
+  height: 18px;
+  pointer-events: none;
+  -webkit-filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(-180deg) saturate(700%) contrast(0.8);
+  filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(-180deg) saturate(700%) contrast(0.8);
+}
+.marg{
+  padding-right: 40px;
+  padding-left:40px;
+}
+.head{
+  font-size: 1.7rem;
+}
+a{
+  font-size: 15px;
+}
 
 @media only screen and (max-width: 480px) {
   .card {
@@ -98,10 +151,7 @@
   .pad {
     padding-top: 45px;
   }
-  /*
-.card-img-top {
-    position: absolute;
-    width: 120px !important;
-    height: 150px;
-}*/
+  .marg{
+    padding: 15px;
+  }
 }
