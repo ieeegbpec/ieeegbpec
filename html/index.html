@@ -7,8 +7,8 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="dist/css/materialize.css" />
-    <link rel="stylesheet" href="dist/css/main.css" />
+    <link rel="stylesheet" href="../dist/css/materialize.css" />
+    <link rel="stylesheet" href="../dist/css/main.css" />
     <title>IEEE GBPEC</title>
   </head>
   <body>
@@ -34,25 +34,22 @@
 
           <span class="header__toggler"> </span>
         </div>
-        <div id="header" class="header__nav hide_nav">
+        <div class="header__nav hide_nav">
           <ul class="nav">
             <li class="nav__item">
-              <a class="nav__link active">Home </a>
+              <a class="nav__link active" href="#">Home </a>
             </li>
             <li class="nav__item">
-              <a class="nav__link" href="./events/">Events</a>
+              <a class="nav__link" href="./events.html">Events</a>
             </li>
             <li class="nav__item">
               <a class="nav__link" href="">Students Portal</a>
             </li>
             <li class="nav__item">
-              <a class="nav__link" href="./team/">Our Team</a>
+              <a class="nav__link" href="">Our Team</a>
             </li>
             <li class="nav__item">
-              <a class="nav__link" href="./our-journey/">Our Journey</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="./contact/">Contact Us</a>
+              <a class="nav__link" href="">Our Journey</a>
             </li>
           </ul>
         </div>
@@ -71,7 +68,7 @@
     <div id="upcoming_events" class="upcoming_events">
       <!-- upcoming events section -->
       <div class="container">
-        <div class="title">Upcoming Events</div>
+        <div class="upcoming_events__heading">Upcoming Events</div>
 
         <div class="upcoming_events__slider">
           <div class="upcoming_events__slide">
@@ -180,7 +177,14 @@
         <div class="title">Branch Counsellors</div>
         <div class="container">
           <div class="row">
-            <div class="col col-center s12 m12">
+            <div
+              style="
+                align-items: center;
+                display: flex;
+                justify-content: center;
+              "
+              class="col s12 m12"
+            >
               <div style="margin: auto" class="col s12 m7">
                 <div class="card horizontal">
                   <div class="card-image">
@@ -250,8 +254,16 @@
     </section>
     <footer style="background: #212121" class="page-footer">
       <div class="container">
-        <div class="row">
-          <div class="col s12 m6 col-center">
+        <div style="display: flex; align-items: center" class="row">
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+            "
+            class="col s12 m6"
+          >
             <ul class="footer__icons">
               <li class="footer__icon">
                 <img src="../icons/facebook.png" alt="" />

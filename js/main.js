@@ -6,25 +6,21 @@ $('#event').on('click',function(){
     $('.event_card').toggleClass('show_event');
 });
 
-window.onscroll = function() {myFunction()};
+// $('document').on('click',function(){
+    
+//     $('.event_card').removeClass('show_event');
+// });
 
-var header = document.getElementById("header");
-var sticky = header.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset > sticky && window.innerWidth>500) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
-
-$(document).ready(function(){
-  $('.tooltipped').tooltip();
-});
-
-$('.tabs').tabs();
-
-$(document).ready(function(){
-  $('.collapsible').collapsible();
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {direction: 'left'});
+    
   });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.header__toggler').floatingActionButton();
+  });
+
+  $('.tabs').tabs();
