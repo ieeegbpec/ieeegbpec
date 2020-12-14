@@ -6,9 +6,9 @@
 .header__top {
   position: fixed;
   width: 100%;
-  z-index: 100;
   height: 10%;
   background: #00629b;
+  box-shadow: 0px 2px 3px #ffffff61;
 }
 
 .header__bottom {
@@ -70,7 +70,7 @@
 }
 
 .header__brand img {
-  height: 30px;
+  height: 25px;
 }
 
 .header .active {
@@ -122,7 +122,6 @@
     height: auto;
     background: transparent;
     z-index: 0;
-    padding-bottom: 10px;
   }
 }
 
@@ -303,9 +302,17 @@
 }
 
 .upcoming_events {
-  height: 90vh;
+  height: 100vh;
   background-color: #ececf6;
   display: flex;
+}
+
+.upcoming_events__heading {
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 68px;
+  color: #404a7c;
 }
 
 .upcoming_events__slider {
@@ -329,7 +336,7 @@
 .UE_card {
   flex-shrink: 0;
   font-size: 14px;
-  width: 240px;
+  width: 200px;
   margin-right: 20px;
   color: #292c52;
   padding: 65px 20px;
@@ -482,14 +489,11 @@
 }
 
 .event {
-  width: 270px;
   display: flex;
-  margin: auto;
   align-items: center;
 }
 
 .event img {
-  display: none;
   width: 150px;
   flex-shrink: 0;
   height: 180px;
@@ -517,13 +521,18 @@
   border-radius: 4px;
 }
 
-@media (min-width: 500px) {
-  .event {
-    width: auto;
-  }
-  .event img {
-    display: block;
-  }
+.footer {
+  background: black;
+  padding: 40px;
+  justify-content: space-evenly;
+  display: flex;
+}
+
+.footer__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .footer__icons {
@@ -549,13 +558,25 @@
   filter: invert(1);
 }
 
-footer {
-  text-align: center;
-  background: #00629b !important;
+.footer__heading {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
-.footer-copyright {
-  font-size: 10px;
+.footer__list {
+  list-style: none;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer__item {
+  margin-bottom: 5px;
+  letter-spacing: 1.1px;
 }
 
 .about {
@@ -575,6 +596,7 @@ footer {
 }
 
 .counsellor {
+  padding: 40px 0px;
   font-family: "Material Icons";
 }
 
@@ -632,14 +654,8 @@ a {
 }
 
 .container {
-  width: 100%;
+  width: 80%;
   margin: auto;
-}
-
-@media (min-width: 500px) {
-  .container {
-    width: 80%;
-  }
 }
 
 html {
@@ -681,22 +697,5 @@ html {
   footer .row .row {
     align-items: center;
     display: flex;
-    flex-direction: column;
   }
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #00629b;
-  box-shadow: 0px 2px 3px #00000061;
-  padding: 20px;
-}
-
-.col-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
