@@ -166,6 +166,7 @@
         $(document).ready(() => {
 
             $.getJSON("https://ieeegbpec.000webhostapp.com/api/journey", (data) => {
+                console.log(data)
                 if (data.succ) {
                     $('#our_journey').html('');
                     data.res.forEach((_ele) => {
