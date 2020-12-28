@@ -15,7 +15,7 @@
     <title>Contact Us | IEEE GBPEC</title>
 </head>
 
-<body data-new-gr-c-s-check-loaded="14.990.0" data-gr-ext-installed="" cz-shortcut-listen="true">
+<body data-new-gr-c-s-check-loaded="14.990.0" data-gr-ext-installed="" data-gr-ext-disabled="forever" cz-shortcut-listen="true">
     <header class="navbar-fixed">
         <nav class="nav-extended px-3 py-3" id="header">
             <div class="nav-wrapper">
@@ -103,18 +103,21 @@
                             </div>
 
                             <!--Contact us form-->
-                            <form id="contact_form" class="col s12">
-                                <p class="card-panel" style=" padding: 10px;margin:10px auto -10px auto;font-weight: 600;" id="submit_result">Get in touch now !!</p>
+                            <form id="contact_form" method="POST" enctype="multipart/form-data" class="col s12">
+                                <p class="card-panel" style=" padding: 10px;margin:10px auto;font-weight: 600;" id="submit_result">Get in touch now !!</p>
+
                                 <div class="row">
+
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">account_circle</i>
-                                        <input id="fist_name" type="text" class="validate">
+
+                                        <input id="first_name" type="text" class="validate" required="">
                                         <label for="first_name">First Name</label>
                                     </div>
 
 
                                     <div class="input-field col s6">
-                                        <input id="last_name" type="text" class="validate">
+                                        <input id="last_name" type="text" class="validate" required="">
                                         <label for="last_name">Last Name</label>
                                     </div>
                                 </div>
@@ -122,20 +125,21 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">email</i>
-                                        <input id="email" type="email" class="validate">
+                                        <input id="email" type="email" class="validate" required="">
                                         <label for="email">Email</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">textsms</i>
-                                        <input type="text" id="autocomplete-input" class="autocomplete" data-target="autocomplete-options-a01a0e0d-a746-2649-2550-2a965274802d">
-                                        <ul id="autocomplete-options-a01a0e0d-a746-2649-2550-2a965274802d" class="autocomplete-content dropdown-content" tabindex="0"></ul>
-                                        <label for="autocomplete-input">Leave A Message</label>
+                                        <input type="text" id="message" class="autocomplete" required="" data-target="autocomplete-options-43cd3e0d-f249-3cc7-77f1-333124a9574e">
+                                        <ul id="autocomplete-options-43cd3e0d-f249-3cc7-77f1-333124a9574e" class="autocomplete-content dropdown-content"
+                                            tabindex="0"></ul>
+                                        <label for="message">Leave A Message</label>
                                     </div>
                                 </div>
 
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                                <button class="btn waves-effect waves-light" type="submit">Submit
                                 <i class="material-icons right">send</i>
                             </button>
                             </form>
@@ -152,23 +156,22 @@
 
     <script>
         $(document).ready(() => {
-            $("#contact_form").submit(function(e) {
+
+            $("form#contact_form").submit(function(e) {
                 e.preventDefault(); // avoid to execute the actual submit of the form.                
-                $.ajax({
-                    type: "POST",
-                    url: "https://ieeegbpec.000webhostapp.com/api/contact",
-                    data: $('#contact_form').serialize(), // serializes the form's elements.
-                    success: function(data) {
-                        if (data.succ) {
-                            console.log(data) // show response from the php script.
-                            $('#submit_result').html(`${data.public_msg}`).addClass('teal lighten-1 grey-text text-lighten-3');
 
-                            setTimeout(function() {
-                                $('#submit_result').html('Get in touch now !!').removeClass('teal lighten-1 grey-text text-lighten-3');
-                            }, 3000)
-
-                        }
-                    }
+                $.post("https://ieeegbpec.000webhostapp.com/api/contact", {
+                    first_name: $("#first_name").val(),
+                    last_name: $("#last_name").val(),
+                    email: $("#email").val(),
+                    message: $("#message").val(),
+                }, function(res) {
+                    console.log(res)
+                    $('#submit_result').html(`${res.public_msg}`).addClass(`${res.succ ? 'teal lighten-1 ' : 'red darken-1 '} grey-text text-lighten-3`);
+                    $('#submit_result').reset();
+                    setTimeout(function() {
+                        $('#submit_result').html('Get in touch now !!').removeClass('red darken-1 teal lighten-1 grey-text text-lighten-3');
+                    }, 3000);
                 });
             });
         });
