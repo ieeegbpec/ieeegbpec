@@ -31,7 +31,7 @@ footer {
 }
 
 #background__content {
-    background-image: url("https://ieeegbpec.github.io/assets/images/background.jpg");
+    background-image: url("http://local.ieeegbpec.com/assets/images/background.jpg");
     background-color: #cccccc;
     height: 92vh;
     background-position: center;
@@ -119,6 +119,10 @@ footer {
 
 .top_section {
     margin-top: 60px;
+}
+
+.text-justify {
+    text-align: justify;
 }
 
 
